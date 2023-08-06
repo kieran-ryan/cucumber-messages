@@ -1,0 +1,19 @@
+from __future__ import annotations
+
+import dataclasses
+import enum
+from typing import List, Union
+
+<% @schemas.reverse_each do |key, schema| -%>
+@dataclasses.dataclass
+class <%= class_name(key) -%>:<%- schema['properties'].each do |property_name, property| -%>
+
+    <%- ref = property['$ref'] || property['items'] && property['items']['$ref'] -%>
+    <%- if (schema['required'] || []).index(property_name) -%>
+      <%- %>    <%= underscore(property_name) %>: <%= type_for(class_name(key), property_name, property) -%> = <%= default_value(class_name(key), property_name, property) -%>
+    <%- else -%>
+      <%- %>    <%= underscore(property_name) %>: Union[<%= type_for(class_name(key), property_name, property) -%>, None] = None<%- end -%>
+  <%- end -%>
+
+
+<% end -%>

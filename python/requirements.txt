@@ -1,0 +1,5 @@
+black==23.3.0
+build==0.10.0
+dacite==1.8.1
+pytest==7.4.0
+ssort==0.10.0

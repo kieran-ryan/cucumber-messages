@@ -1,0 +1,8 @@
+<% @enums.each do |enum| -%>
+class <%= enum[:name] %>(str, enum.Enum):
+<% enum[:values].each do |value| -%>
+    <%= enum_constant(value) %> = "<%= value %>"
+<% end -%>
+
+
+<% end -%>

@@ -1,0 +1,5 @@
+Convert envelope to appropriate format (Strip 'None' attributes)
+CamelCase - dataclasses-json
+Incorporate tox to build package and execute tests against it
+Docker image
+Undo README formatting changes

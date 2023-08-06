@@ -1,11 +1,11 @@
 # Cucumber Messages
 
-*Cucumber Messages* is a message protocol for representing results and other information
+_Cucumber Messages_ is a message protocol for representing results and other information
 from Cucumber. The protocol aims to decouple various components of the Cucumber platform, with the following advantages:
 
-* Each component only needs to know about a subset of messages
-* Gherkin is decoupled from the Cucumber execution component
-* Enables the future support other formats such as Markdown and Excel
+- Each component only needs to know about a subset of messages
+- Gherkin is decoupled from the Cucumber execution component
+- Enables the future support other formats such as Markdown and Excel
 
 ## Message Overview
 
@@ -23,7 +23,7 @@ See [messages.md](messages.md) for a detailed description of each message type.
 ## Encoding
 
 When Cucumber Messages are stored in a file or sent over a network, they are
-encoded as [NDJSON](http://ndjson.org/). We call this a *message stream*.
+encoded as [NDJSON](http://ndjson.org/). We call this a _message stream_.
 
 Each message in a message stream is of type [Envelope](messages.md#envelope).
 
@@ -31,6 +31,7 @@ Each message in a message stream is of type [Envelope](messages.md#envelope).
 
 Each subdirectory defines language-specific implementations of these messages,
 generated from the JSON schemas. The current implementation are:
+
 - .Net
 - C++
 - Elixir
@@ -39,16 +40,18 @@ generated from the JSON schemas. The current implementation are:
 - Javascript
 - Perl
 - PHP
+- Python
 - Ruby
 
 ## Message emitters
+
 Cucumber Messages are currently sent by the following versions of Cucumber (using the `message` formatter):
 
-* Cucumber-JVM 6.0.0 and greater
-* Cucumber-Ruby 4.0.0 and greater
-* Cucumber.js 7.0.0 and greater
+- Cucumber-JVM 6.0.0 and greater
+- Cucumber-Ruby 4.0.0 and greater
+- Cucumber.js 7.0.0 and greater
 
-Messages emitters for the other Cucumber languages (e.g. Perl) are not yet implemented. 
+Messages emitters for the other Cucumber languages (e.g. Perl) are not yet implemented.
 
 ## Why Cucumber Messages
 
@@ -73,7 +76,7 @@ This can cause out of memory errors, aborting Cucumber runs or reporting jobs. I
 consumed by downstream processors until the last scenario has finished.
 
 With Cucumber Messages, several messages containing smaller pieces of information are emitted
-continuously to a *stream* (NDJSON, see above), avoiding high memory consumption and enabling real-time processing
+continuously to a _stream_ (NDJSON, see above), avoiding high memory consumption and enabling real-time processing
 of results.
 
 ### Lack of a schema
@@ -90,17 +93,17 @@ are very limited.
 
 The `json` format represents the following information:
 
-* Gherkin source (as a rough and lossy representation of a Gherkin document's abstract syntax tree)
-* Attachments (formerly called `embeddings`)
-* Path and line for step definitions
-* Results for hooks
+- Gherkin source (as a rough and lossy representation of a Gherkin document's abstract syntax tree)
+- Attachments (formerly called `embeddings`)
+- Path and line for step definitions
+- Results for hooks
 
 However, it does not contain the following information (but Cucumber Messages does):
 
-* Original source code of the Gherkin document
-* Gherkin document abstract syntax tree
-* Step definitions
-* Parameter types
+- Original source code of the Gherkin document
+- Gherkin document abstract syntax tree
+- Step definitions
+- Parameter types
 
 This kind of information is required to produce rich reports and analytics, and is
 used in [@cucumber/react](https://github.com/cucumber/cucumber-react) and [Cucumber Reports](https://reports.cucumber.io/).
@@ -111,5 +114,5 @@ You will find examples of Cucumber Messages in the [compatibility-kit](https://g
 
 ## Utilities
 
-* [@cucumber/react](https://github.com/cucumber/cucumber-react) - React component that renders Cucumber Messages nicely
-  * Used internally by [Cucumber Reports](https://reports.cucumber.io/).
+- [@cucumber/react](https://github.com/cucumber/cucumber-react) - React component that renders Cucumber Messages nicely
+  - Used internally by [Cucumber Reports](https://reports.cucumber.io/).

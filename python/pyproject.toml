@@ -1,0 +1,39 @@
+[build-system]
+build-backend = "flit.buildapi"
+requires = [
+    "flit",
+]
+
+[project]
+authors = [
+    { name = "Kieran Ryan" },
+]
+classifiers = [
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: MacOS",
+    "Operating System :: Microsoft :: Windows",
+    "Operating System :: POSIX :: Linux",
+    "Programming Language :: Python :: 3 :: Only",
+    "Programming Language :: Python :: 3.7",
+    "Programming Language :: Python :: 3.8",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+]
+dependencies = [
+    "dacite==1.8.1",
+]
+description = "Cucumber messages protocol"
+dynamic = [
+    "version",
+]
+name = "cucumber-messages"
+readme = "README.md"
+
+[project.urls]
+Source = "https://github.com/kieran-ryan/cucumber_messages"
+Tracker = "https://github.com/kieran-ryan/cucumber_messages/issues"
+
+[tool.flit.module]
+name = "cucumber_messages"

@@ -160,6 +160,45 @@ class TypeScript < Codegen
   end
 end
 
+# TODO: Rename 'Exception'
+class Python < Codegen
+  def initialize(paths)
+    language_type_by_schema_type = {
+      'integer' => 'int',
+      'string' => 'str',
+      'boolean' => 'bool',
+    }
+
+    super(paths, language_type_by_schema_type)
+  end
+
+  def default_value(parent_type_name, property_name, property)
+    if property['items']
+      'dataclasses.field(default_factory=list)'
+    elsif property['type'] == 'string'
+      if property['enum']
+        enum_type_name = type_for(parent_type_name, property_name, property)
+        default_enum(enum_type_name, property)
+      else
+        '""'
+      end
+    elsif property['type'] == 'integer'
+      "0"
+    elsif property['type'] == 'boolean'
+      "False"
+    elsif property['$ref']
+      type = type_for(parent_type_name, nil, property)
+      "dataclasses.field(default_factory=#{type})"
+    else
+      raise "Cannot create default value for #{parent_type_name}##{property.to_json}"
+    end
+  end
+
+  def array_type_for(type_name)
+    "List[#{type_name}]"
+  end
+end
+
 class Cpp < Codegen
   def initialize(paths)
     language_type_by_schema_type = {

@@ -6,8 +6,21 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/)
 and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [Unreleased]
+
+## [24.0.1] - 2023-12-21
+### Fixed
+- Update repo URLs ([#190](https://github.com/cucumber/messages/pull/190))
+
+## [24.0.0] - 2023-11-24
+### Added
+- Add `stackTrace` prop to `Exception` message ([#182](https://github.com/cucumber/messages/pull/182))
+
+## [23.0.0] - 2023-11-01
 ### Added
 - Added C++ implementation ([#152](https://github.com/cucumber/messages/pull/152))
+
+### Changed
+- [Ruby] Updated minimum Ruby version to 2.5 - ([#177](https://github.com/cucumber/messages/pull/177) [luke-hill](https://github.com/luke-hill))
 
 ## [22.0.0] - 2023-04-06
 ### Added
@@ -496,13 +509,16 @@ aggregated status.
 ### Added
 - Protobuf messages for Go, Java, JavaScript, TypeScript and Ruby
 
-[Unreleased]: https://github.com/cucumber/messages/compare/v22.0.0...main
-[22.0.0]: https://github.com/cucumber/messages/compare/v21.0.1...main
-[21.0.1]: https://github.com/cucumber/messages/compare/v21.0.0...main
-[21.0.0]: https://github.com/cucumber/messages/compare/v20.0.0...main
-[20.0.0]: https://github.com/cucumber/messages/compare/v19.1.4...main
-[19.1.4]: https://github.com/cucumber/messages/compare/v19.1.3...main
-[19.1.3]: https://github.com/cucumber/messages/compare/v19.1.2...main
+[Unreleased]: https://github.com/cucumber/messages/compare/v24.0.1...HEAD
+[24.0.1]: https://github.com/cucumber/messages/compare/v24.0.0...v24.0.1
+[24.0.0]: https://github.com/cucumber/messages/compare/v23.0.0...v24.0.0
+[23.0.0]: https://github.com/cucumber/messages/compare/v22.0.0...v23.0.0
+[22.0.0]: https://github.com/cucumber/messages/compare/v21.0.1...v22.0.0
+[21.0.1]: https://github.com/cucumber/messages/compare/v21.0.0...v21.0.1
+[21.0.0]: https://github.com/cucumber/messages/compare/v20.0.0...v21.0.0
+[20.0.0]: https://github.com/cucumber/messages/compare/v19.1.4...v20.0.0
+[19.1.4]: https://github.com/cucumber/messages/compare/v19.1.3...v19.1.4
+[19.1.3]: https://github.com/cucumber/messages/compare/v19.1.2...v19.1.3
 [19.1.2]: https://github.com/cucumber/messages/compare/v19.1.1...v19.1.2
 [19.1.1]: https://github.com/cucumber/messages/compare/v19.1.0...v19.1.1
 [19.1.0]: https://github.com/cucumber/messages/compare/v19.0.0...v19.1.0
